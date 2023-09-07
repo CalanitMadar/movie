@@ -1,15 +1,83 @@
+<!DOCTYPE html>
 <html>
-    <head>
-    </head>
-    <body>
-        <h1>Search Movies Page</h1>
-        <form action="/SearchMoviesPage" method="post">
-            <div>
-                <label >Name</label>
-                <input type="tel" name="name" id="name" placeholder="Please type the name of the movie">
-            </div><br>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
 
-            <h3>Please select the genre types</h3>
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(101, 217, 240, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2796ba;
+        }
+
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"],
+        button {
+            background-color: #2796ba;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 48%; /* Adjust the width as needed */
+            margin-right: 2%; /* Add some spacing between buttons */
+        }
+
+        button {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Movies Page</h1>
+    <form action="/SearchMoviesPage" method="post">
+        <div>
+            <label>Name</label>
+            <input type="tel" name="name" id="name" placeholder="Please type the name of the movie">
+        </div><br>
+
+        <h3>Please select the genre types</h3>
+        <div class="radio-group">
+    
             <input type="radio" id="radio" name="radio" value="Drama"><label>Drama</label><br>
             <input type="radio" id="radio" name="radio" value="Science-Fiction"><label>Science-Fiction</label><br>
             <input type="radio" id= "radio" name="radio" value="Thriller"><label>Thriller</label><br>
@@ -34,17 +102,17 @@
             <input type="radio" id="radio" name="radio" value="War"><label>War</label><br>
 
 
-            <br><br>
+        </div>
 
-            <div>
-                <label>Language</label>
-                <input type="tel" id="Language" name="Language" placeholder="Please type the Language of the movie">
-            </div><br>
+        <br><br>
 
-            <input type="submit" value="Search">
-            <button onclick="history.back()">Back</button>
+        <div>
+            <label>Language</label>
+            <input type="tel" id="Language" name="Language" placeholder="Please type the Language of the movie">
+        </div><br>
 
-        </form>
-
-    </body>
+        <input type="submit" value="Search">
+        <button onclick="history.back()">Back</button>
+    </form>
+</body>
 </html>

@@ -1,37 +1,92 @@
-<html>
-    <head>
-        <script src="../routes/registration.js"></script>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search and Personal Database</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-        <form action="/users/getdata" method="POST">
+        form {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(101, 217, 240, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2796ba;
+            width: 100%;
+            text-align: left;
+        }
 
-            <input type="submit" value="Save">
-        </form>
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
+        input[type="submit"] {
+            background-color: #2796ba;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
 
+        a {
+            text-decoration: none;
+            color: #8edbed;
+            border-bottom: 1px solid #333;
+            margin-top: 10px;
+            display: inline-block;
+        }
 
-        <form action="/login" method="post">
-            <div>
-                <label >username</label>
-                <input name="username" id="username" placeholder="please enter your username"  required>
-            </div>
+        h2 {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="/login" method="post">
+        <div style="width: 100%;">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Please enter your username" required>
+        </div>
 
-            <div>
-                <label for="password">password</label>
-                <input type="password" id="password" name="password" placeholder="please enter password" required>
-            </div>
+        <div style="width: 100%;">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Please enter password" required>
+        </div>
 
+        
 
-            <div>
-                <label><a href="/registration" >registeration</a></label>
-            </div>
-
-            <input type="submit" value="login">
-        </form>
-        <h2><%=errorMessage%></h2>
-
-    </body>
+        <input type="submit" value="Login"><br/>
+        <div>
+            <label><a href="/registration">Registration</a></label>
+        </div><br/>
+    </form>
+    <h2><%= errorMessage %></h2>
+</body>
 </html>
-

@@ -1,47 +1,126 @@
-<html>
-    <head>
-    </head>
-    <body>
-        <h1>creating a new movie</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating a New Movie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px; /* רוחב מסך מירבי לתוך מרכז הדף */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(101, 217, 240, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2796ba;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap; /* Allow checkboxes to wrap to the next line when there's not enough space */
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #2796ba;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #8edbed;
+            border-bottom: 1px solid #333;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Creating a New Movie</h1>
         <form action="/newMovie" method="post">
             <div>
-                <label >Name</label>
-                <input name="name" id="name" placeholder="Please type the name of the movie"  required>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Please type the name of the movie" required>
             </div>
 
             <div>
-                <label>Language</label>
-                <input id="Language" name="Language" placeholder="Please type the language of the movie" required>
+                <label for="Language">Language</label>
+                <input type="text" name="Language" id="Language" placeholder="Please type the language of the movie" required>
             </div>
 
             <h3>Please select the genre types</h3>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Drama"><label>Drama</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Science-Fiction"><label>Science-Fiction</label><br>
-            <input type="checkbox" id= "checkbox" name="checkbox" value="Thriller"><label>Thriller</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Action"><label>Action</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Crime"><label>Crime</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Horror"><label>Horror</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Romance"><label>Romance</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Thriller"><label>Thriller</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Adventure"><label>Adventure</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Espionage"><label>Espionage</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Music"><label>Music</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Mystery"><label>Mystery</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Supernatural"><label>Supernatural</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Fantasy"><label>Fantasy</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Family"><label>Family</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Anime"><label>Anime</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Comedy"><label>Comedy</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Legal"><label>Legal</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Western"><label>Western</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="Sports"><label>Sports</label><br>
-            <input type="checkbox" id="checkbox" name="checkbox" value="War"><label>War</label><br>
+            <div class="checkbox-group">
 
-            <br><br>
+            <input type="checkbox" name="checkbox" value="Drama" id="checkbox1"><label for="checkbox1">Drama</label><br>
+            <input type="checkbox" name="checkbox" value="Science-Fiction" id="checkbox2"><label for="checkbox2">Science-Fiction</label><br>
+            <input type="checkbox" name="checkbox" value="Thriller" id="checkbox3"><label for="checkbox3">Thriller</label><br>
+            <input type="checkbox" name="checkbox" value="Action" id="checkbox4"><label for="checkbox4">Action</label><br>
+            <input type="checkbox" name="checkbox" value="Crime" id="checkbox5"><label for="checkbox5">Crime</label><br>
+            <input type="checkbox" name="checkbox" value="Horror" id="checkbox6"><label for="checkbox6">Horror</label><br>
+            <input type="checkbox" name="checkbox" value="Romance" id="checkbox7"><label for="checkbox7">Romance</label><br>
+            <input type="checkbox" name="checkbox" value="Adventure" id="checkbox8"><label for="checkbox8">Adventure</label><br>
+            <input type="checkbox" name="checkbox" value="Espionage" id="checkbox9"><label for="checkbox9">Espionage</label><br>
+            <input type="checkbox" name="checkbox" value="Music" id="checkbox10"><label for="checkbox10">Music</label><br>
+            <input type="checkbox" name="checkbox" value="Mystery" id="checkbox11"><label for="checkbox11">Mystery</label><br>
+            <input type="checkbox" name="checkbox" value="Supernatural" id="checkbox12"><label for="checkbox12">Supernatural</label><br>
+            <input type="checkbox" name="checkbox" value="Fantasy" id="checkbox13"><label for="checkbox13">Fantasy</label><br>
+            <input type="checkbox" name="checkbox" value="Family" id="checkbox14"><label for="checkbox14">Family</label><br>
+            <input type="checkbox" name="checkbox" value="Anime" id="checkbox15"><label for="checkbox15">Anime</label><br>
+            <input type="checkbox" name="checkbox" value="Comedy" id="checkbox16"><label for="checkbox16">Comedy</label><br>
+            <input type="checkbox" name="checkbox" value="Legal" id="checkbox17"><label for="checkbox17">Legal</label><br>
+            <input type="checkbox" name="checkbox" value="Western" id="checkbox18"><label for="checkbox18">Western</label><br>
+            <input type="checkbox" name="checkbox" value="Sports" id="checkbox19"><label for="checkbox19">Sports</label><br>
+            <input type="checkbox" name="checkbox" value="War" id="checkbox20"><label for="checkbox20">War</label><br>
 
-            <input type="submit" value="save">
-        </form>
+        </div>
 
-    </body>
+        <br><br>
+
+        <input type="submit" value="Save">
+    </form>
+</div>
+</body>
 </html>
-
