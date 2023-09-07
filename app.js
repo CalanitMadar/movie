@@ -55,6 +55,9 @@ app.use('/', movieDataRouter);
 app.use('/', userDataRouter);
 
 
+app.listen(3000, function () {
+  console.log('Server is running on port 3000'); // הוסיפי תיאור מתאים לפורט שאת משתמשת בו
+});
 
 
 
