@@ -196,15 +196,23 @@ const checkGenereMovies = (Genere, urlData, jsonData)=>
     });
 
     
+
+
     jsonData.movies.forEach(element => {
+        if (!Array.isArray(element.Genres)) {
+            element.Genres = [element.Genres];
+        }
+    
         element.Genres.forEach(element2 => {
-           if(Genere == element2)
-           {
-            listMovies.push(element.Name);
-           }
+            if (Genere == element2) {
+                listMovies.push(element.Name);
+            }
         });
     });
     return listMovies;
+    
+    
+    
 
 }
 //==============================================

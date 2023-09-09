@@ -63,7 +63,6 @@
         }
 
         h2 {
-            color: red;
             text-align: center;
         }
     </style>
@@ -86,7 +85,12 @@
         <div>
             <label><a href="/registration">Registration</a></label>
         </div><br/>
+    <% if (errorMessage) { %>
+        <h2 style=`color: <%= color %>`><%= errorMessage %></h2>
+      <% } %>
     </form>
-    <h2><%= errorMessage %></h2>
+
+      
+      
 </body>
 </html>

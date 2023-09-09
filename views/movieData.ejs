@@ -1,29 +1,83 @@
+<!DOCTYPE html>
 <html>
-    <head>
-    </head>
-    <body>
-        <h1>movie data</h1>
-        <h3>id: <%=obj.id%></h3>
-        <h3>name: <%=obj.name%></h3>
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-        <h3>genres: </h3><% obj.genres.forEach( function(genre) {  %>
-            <li><%= genre  %> </li>
+        h1 {
+            color: #036e92;
+        }
+
+        h3 {
+            color: #2796ba;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #8edbed;
+            border-bottom: 1px solid #333;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        input[type="submit"] {
+            background-color: #2796ba;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Data</h1>
+    <h3>id: <%=obj.id%></h3>
+    <h3>name: <%=obj.name%></h3>
+    <h3>url: <a href=<%=obj.url%>><%=obj.url%></a></h3></h3>
+
+    <h3>genres: </h3>
+    <ul>
+        <% obj.genres.forEach(function(genre) { %>
+            <li><%= genre %></li>
         <% }) %>
+    </ul>
 
-        <h3>language: <%=obj.language%></h3>
-        <h3>image: </h3>
+    <h3>language: <%=obj.language%></h3>
+    <h3>image: </h3>
+    <img src="<%=obj.image%>">
+    <br>
+    <a href="/backtomenue">Back to Menu</a><br>
 
-        <img src=<%=obj.image%>>
-        <br>
-        <a href="">Back to Menu</a><br>
-
-        <input
+    <input
         action="action"
-        onclick="window.history.go(-3); return false;"
+        onclick="window.history.go(-1); return false;"
         type="submit"
-        value="Back"/>
-        
-
-    </body>
+        value="Back"
+    />
+</body>
 </html>
-

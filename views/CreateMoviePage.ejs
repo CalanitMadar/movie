@@ -5,38 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creating a New Movie</title>
     <style>
-        body {
+       body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
 
         h1 {
             text-align: center;
+            color: #036e92;
         }
 
-        .container {
-            max-width: 600px; /* רוחב מסך מירבי לתוך מרכז הדף */
-            padding: 20px;
+        form {
+            max-width: 1000px;
+            margin: 0 auto;
             background-color: #fff;
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(101, 217, 240, 0.2);
+            box-shadow: 0 0 10px  #036e92;
         }
 
         label {
-            display: block;
             font-weight: bold;
+            display: block;
             margin-bottom: 10px;
             color: #2796ba;
         }
 
-        input[type="text"] {
-            width: 100%;
+        input[type="text"],
+        input[type="tel"] {
+            width: 90%;
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
@@ -44,36 +41,52 @@
         }
 
         h3 {
+            font-size: 1.2rem;
             margin-top: 20px;
-            margin-bottom: 10px;
-            font-weight: bold;
+            color: #036e92;
         }
 
-        .checkbox-group {
-            display: flex;
-            flex-wrap: wrap; /* Allow checkboxes to wrap to the next line when there's not enough space */
+        .radio-group {
+            margin-top: 10px;
+            color: #2796ba;
         }
 
-        .checkbox-group input[type="checkbox"] {
+        input[type="radio"] {
             margin-right: 5px;
+            display: inline-block;
         }
 
-        input[type="submit"] {
+        label.radio-label {
+            display: inline-block;
+            width: 150px; /* Set a width for the labels to align them properly */
+        }
+
+        input[type="submit"],
+        button {
             background-color: #2796ba;
-            color: white;
-            padding: 10px;
+            color: #fff;
             border: none;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            width: 100%;
         }
 
+        button {
+            background-color: #ccc;
+            margin-left: 10px;
+        }
         a {
             text-decoration: none;
             color: #8edbed;
             border-bottom: 1px solid #333;
             margin-top: 10px;
             display: inline-block;
+        }
+
+        @media screen and (max-width: 600px) {
+            form {
+                padding: 10px;
+            }
         }
     </style>
 </head>

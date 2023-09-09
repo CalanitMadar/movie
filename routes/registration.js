@@ -13,22 +13,25 @@ router.get('/registration', function(req, res, next) {
 router.post('/checkeData', async function(req, res, next) {
   let users = await dataBL.getUsers();
   let flag = false;
+  let errorMessage = ""; // משתנה לאחסון הודעת השגיאה
+  let color = ""; // משתנה לאחסון הצבע
 
   users.users.forEach(element => {
-    if(element.Username == req.body.username)//if This username already exist
-    {
+    if (element.Username == req.body.username) {
       flag = true;
-      res.render('data', {errorMessage:"This username already exist"})
-
+      errorMessage = "This username already exists"; // תוכן ההודעה במשתנה
+      color = '#FF0000'; // צבע אדום
     }
-      });
-      if(!flag)
-      {
-        await dataBL.saveUser(req.body);//else create new username
-        res.render('data', {errorMessage:"Registration is received in the system"});
-
-      }
   });
+
+  if (!flag) {
+    await dataBL.saveUser(req.body);
+    errorMessage = "Registration was successfully received"; // תוכן ההודעה במשתנה
+    color = '0000FF'; // צבע כחול
+  }
+
+  res.render('data', { errorMessage: errorMessage, color: color });
+});
 
 
 module.exports = router;

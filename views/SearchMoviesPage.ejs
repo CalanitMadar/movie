@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Movies Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -9,26 +12,28 @@
 
         h1 {
             text-align: center;
+            color: #036e92;
         }
 
         form {
-            max-width: 600px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
             background-color: #fff;
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(101, 217, 240, 0.2);
+            box-shadow: 0 0 10px  #036e92;
         }
 
         label {
-            display: block;
             font-weight: bold;
+            display: block;
             margin-bottom: 10px;
             color: #2796ba;
         }
 
+        input[type="text"],
         input[type="tel"] {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
@@ -36,34 +41,52 @@
         }
 
         h3 {
+            font-size: 1.2rem;
             margin-top: 20px;
-            margin-bottom: 10px;
-            font-weight: bold;
+            color: #036e92;
         }
 
         .radio-group {
-            display: flex;
-            flex-wrap: wrap;
+            margin-top: 10px;
+            color: #2796ba;
         }
 
-        .radio-group input[type="radio"] {
+        input[type="radio"] {
             margin-right: 5px;
+            display: inline-block;
+        }
+
+        label.radio-label {
+            display: inline-block;
+            width: 150px; /* Set a width for the labels to align them properly */
         }
 
         input[type="submit"],
         button {
             background-color: #2796ba;
-            color: white;
-            padding: 10px;
+            color: #fff;
             border: none;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            width: 48%; /* Adjust the width as needed */
-            margin-right: 2%; /* Add some spacing between buttons */
         }
 
         button {
             background-color: #ccc;
+            margin-left: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #8edbed;
+            border-bottom: 1px solid #333;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        @media screen and (max-width: 600px) {
+            form {
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -71,48 +94,46 @@
     <h1>Search Movies Page</h1>
     <form action="/SearchMoviesPage" method="post">
         <div>
-            <label>Name</label>
-            <input type="tel" name="name" id="name" placeholder="Please type the name of the movie">
-        </div><br>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Please type the name of the movie">
+        </div>
 
         <h3>Please select the genre types</h3>
         <div class="radio-group">
-    
-            <input type="radio" id="radio" name="radio" value="Drama"><label>Drama</label><br>
-            <input type="radio" id="radio" name="radio" value="Science-Fiction"><label>Science-Fiction</label><br>
-            <input type="radio" id= "radio" name="radio" value="Thriller"><label>Thriller</label><br>
-            <input type="radio" id="radio" name="radio" value="Action"><label>Action</label><br>
-            <input type="radio" id="radio" name="radio" value="Crime"><label>Crime</label><br>
-            <input type="radio" id="radio" name="radio" value="Horror"><label>Horror</label><br>
-            <input type="radio" id="radio" name="radio" value="Romance"><label>Romance</label><br>
-            <input type="radio" id="radio" name="radio" value="Thriller"><label>Thriller</label><br>
-            <input type="radio" id="radio" name="radio" value="Adventure"><label>Adventure</label><br>
-            <input type="radio" id="radio" name="radio" value="Espionage"><label>Espionage</label><br>
-            <input type="radio" id="radio" name="radio" value="Music"><label>Music</label><br>
-            <input type="radio" id="radio" name="radio" value="Mystery"><label>Mystery</label><br>
-            <input type="radio" id="radio" name="radio" value="Supernatural"><label>Supernatural</label><br>
-            <input type="radio" id="radio" name="radio" value="Fantasy"><label>Fantasy</label><br>
-            <input type="radio" id="radio" name="radio" value="Family"><label>Family</label><br>
-            <input type="radio" id="radio" name="radio" value="Anime"><label>Anime</label><br>
-            <input type="radio" id="radio" name="radio" value="Comedy"><label>Comedy</label><br>
-            <input type="radio" id="radio" name="radio" value="History"><label>History</label><br>
-            <input type="radio" id="radio" name="radio" value="Legal"><label>Legal</label><br>
-            <input type="radio" id="radio" name="radio" value="Western"><label>Western</label><br>
-            <input type="radio" id="radio" name="radio" value="Sports"><label>Sports</label><br>
-            <input type="radio" id="radio" name="radio" value="War"><label>War</label><br>
-
-
+            <input type="radio" id="radio1" name="radio" value="Drama"><label class="radio-label" for="radio1">Drama</label><br>
+            <input type="radio" id="radio2" name="radio" value="Science-Fiction"><label class="radio-label" for="radio2">Science-Fiction</label><br>
+            <input type="radio" id="radio3" name="radio" value="Thriller"><label class="radio-label" for="radio3">Thriller</label><br>
+            <input type="radio" id="radio4" name="radio" value="Action"><label class="radio-label" for="radio4">Action</label><br>
+            <input type="radio" id="radio5" name="radio" value="Crime"><label class="radio-label" for="radio5">Crime</label><br>
+            <input type="radio" id="radio6" name="radio" value="Horror"><label class="radio-label" for="radio6">Horror</label><br>
+            <input type="radio" id="radio7" name="radio" value="Romance"><label class="radio-label" for="radio7">Romance</label><br>
+            <input type="radio" id="radio8" name="radio" value="Thriller"><label class="radio-label" for="radio8">Thriller</label><br>
+            <input type="radio" id="radio9" name="radio" value="Adventure"><label class="radio-label" for="radio9">Adventure</label><br>
+            <input type="radio" id="radio10" name="radio" value="Espionage"><label class="radio-label" for="radio10">Espionage</label><br>
+            <input type="radio" id="radio11" name="radio" value="Music"><label class="radio-label" for="radio11">Music</label><br>
+            <input type="radio" id="radio12" name="radio" value="Mystery"><label class="radio-label" for="radio12">Mystery</label><br>
+            <input type="radio" id="radio13" name="radio" value="Supernatural"><label class="radio-label" for="radio13">Supernatural</label><br>
+            <input type="radio" id="radio14" name="radio" value="Fantasy"><label class="radio-label" for="radio14">Fantasy</label><br>
+            <input type="radio" id="radio15" name="radio" value="Family"><label class="radio-label" for="radio15">Family</label><br>
+            <input type="radio" id="radio16" name="radio" value="Anime"><label class="radio-label" for="radio16">Anime</label><br>
+            <input type="radio" id="radio17" name="radio" value="Comedy"><label class="radio-label" for="radio17">Comedy</label><br>
+            <input type="radio" id="radio18" name="radio" value="History"><label class="radio-label" for="radio18">History</label><br>
+            <input type="radio" id="radio19" name="radio" value="Legal"><label class="radio-label" for="radio19">Legal</label><br>
+            <input type="radio" id="radio20" name="radio" value="Western"><label class="radio-label" for="radio20">Western</label><br>
+            <input type="radio" id="radio21" name="radio" value="Sports"><label class="radio-label" for="radio21">Sports</label><br>
+            <input type="radio" id="radio22" name="radio" value="War"><label class="radio-label" for="radio22">War</label><br>
+            
         </div>
 
-        <br><br>
-
         <div>
-            <label>Language</label>
-            <input type="tel" id="Language" name="Language" placeholder="Please type the Language of the movie">
-        </div><br>
+            <label for="Language">Language</label>
+            <input type="text" id="Language" name="Language" placeholder="Please type the Language of the movie">
+        </div>
+
 
         <input type="submit" value="Search">
-        <button onclick="history.back()">Back</button>
+        <button type="button" onclick="history.back()">Back</button>
+
     </form>
 </body>
 </html>

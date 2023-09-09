@@ -1,21 +1,90 @@
 <!DOCTYPE html>
 <html>
-    <body>
 
-        <form action="/checkeData" method="post">
-            <div>
-                <label >username</label>
-                <input name="username" id="username" placeholder="please enter your username"  required>
-            </div>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-            <div>
-                <label for="password">password</label>
-                <input type="password" id="password" name="password" placeholder="please enter password" required>
-            </div>
+        form {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(101, 217, 240, 0.2);
+        }
 
-            <div id="error" class="text-danger" ></div>
-            <input type="submit" value="submit">
-        </form>
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2796ba;
+            width: 100%;
+            text-align: left;
+        }
 
-    </body>
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #2796ba;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2796ba; /* שימור על אותו צבע כחול */
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        h2 {
+            color: red;
+            text-align: center;
+        }
+
+        #error {
+            color: red; /* שימור על אותו צבע אדום */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="/checkeData" method="post">
+        <div>
+            <label for="username">Username</label> <!-- שימור על תווית זו עם אות גדולה -->
+            <input type="text" id="username" name="username" placeholder="Please enter your username" required>
+        </div>
+
+        <div>
+            <label for="password">Password</label> <!-- שימור על תווית זו עם אות גדולה -->
+            <input type="password" id="password" name="password" placeholder="Please enter password" required>
+        </div>
+
+        <div id="error"></div>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
 </html>

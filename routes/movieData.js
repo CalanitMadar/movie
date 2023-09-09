@@ -16,6 +16,8 @@ router.get('/movieData/:movie',async function(req, res, next) {
   let dataUrl = await mdBL.getDataFromUrl(movieName);
 
   let dataJson = await mdBL.getDataFromJson(movieName);
+  console.log(dataUrl);
+
   if(dataJson != 0)
   {
     let data = {id : dataJson.id, name : dataJson.Name , genres : dataJson.Genres , language : dataJson.Language}
@@ -24,7 +26,7 @@ router.get('/movieData/:movie',async function(req, res, next) {
 
   if(dataUrl != 0)
   {
-    let data = {id : dataUrl.id, name : dataUrl.name , genres : dataUrl.genres , language : dataUrl.language, image:dataUrl.image.medium}
+    let data = {id : dataUrl.id, name : dataUrl.name , genres : dataUrl.genres , language : dataUrl.language, image:dataUrl.image.medium, url : dataUrl.url}
     res.render('movieData',{obj : data});
   }
 
